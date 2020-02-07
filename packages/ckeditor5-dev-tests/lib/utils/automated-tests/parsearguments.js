@@ -18,7 +18,8 @@ module.exports = function parseArguments( args ) {
 			'browsers',
 			'reporter',
 			'debug',
-			'karma-config-overrides'
+			'karma-config-overrides',
+			'coverage-paths'
 		],
 
 		boolean: [
@@ -47,6 +48,7 @@ module.exports = function parseArguments( args ) {
 			reporter: 'mocha',
 			watch: false,
 			coverage: false,
+			'coverage-paths': '',
 			verbose: false,
 			'source-map': false,
 			server: false,
@@ -58,6 +60,7 @@ module.exports = function parseArguments( args ) {
 	const options = minimist( args, minimistConfig );
 
 	options.karmaConfigOverrides = options[ 'karma-config-overrides' ];
+	options.coveragePaths = options[ 'coverage-paths' ];
 	options.sourceMap = options[ 'source-map' ];
 	options.identityFile = options[ 'identity-file' ];
 	options.browsers = options.browsers.split( ',' );
