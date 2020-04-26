@@ -82,7 +82,7 @@ function build( config ) {
 					console.log( 'JSDoc started...' );
 
 					try {
-						tools.shExec( `${ cmd } -c ${ tmpConfig.name }`, { verbosity: 'info' } );
+						tools.shExec( `node ${ cmd } -c ${ tmpConfig.name }`, { verbosity: 'info' } );
 					} catch ( error ) {
 						return reject( `Error during JSDoc generation: ${ error.message }` );
 					}
